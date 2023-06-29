@@ -33,6 +33,9 @@ def start():
                 print_message(text.contact_changed(new.get('name') if new.get('name') else old_name))
 
             case 7:
-                pass
+                word = input_return(text.search_word)
+                result = model.search(word)
+                show_contacts(result)
+                model.delete_contact(result)
             case 8:
                 break

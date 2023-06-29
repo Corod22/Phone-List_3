@@ -36,3 +36,14 @@ def change(index: int, new: dict[str, str]):
     for key, field in new.items():
         if field != '':
             phone_book[index - 1][key] = field
+
+def delete_contact(result: str)-> list[dict]:
+    uid = input("Введите порядковый номер контакта для удаления: ")
+    if uid in phone_book:
+        del phone_book[uid]
+        print("Контакт успешно удален")
+    else:
+        print("Контакт не найден")
+    #result = []
+    #del phone_book[result]
+    #print("Контакт успешно удален")
